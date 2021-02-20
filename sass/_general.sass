@@ -1,0 +1,90 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background: rgb(180,58,167)
+    background: linear-gradient(138deg, rgba(180,58,167,1) 10%, rgba(208,40,114,1) 41%, rgba(252,128,56,1) 87%, rgba(252,195,69,1) 100%)
+
+.container
+    margin: 100px auto
+    max-width: 700px
+
+.card
+    width: 700px        
+    min-height: 500px
+    background: #fff
+    border-radius: 10px
+    padding: 20px 
+    position: relative
+    &-body
+        .list-wrapper
+            overflow: auto
+            height: 300px
+            margin-bottom: 50px
+    h1
+        text-align: center
+        border-bottom: 1px solid #000   
+            font-family: Arial, Helvetica, sans-serif
+        color: #CC2B7B
+    form
+        margin-top: 30px    
+        position: relative
+        text-align: center
+        input
+            height: 60px
+            width: 90%
+            border-radius: 30px
+            border: none
+            background-color: rgb(250, 238, 238);
+            outline: none
+        
+            font-family: Arial, Helvetica, sans-serif
+            font-size: 25px
+            color: #000;
+            padding-left: 20px
+            box-shadow: 0px 10px 20px rgba(#000, .3)
+            margin: 0 auto 0
+            display: block    
+        button
+            cursor: pointer
+            i::before
+                content: url('../images/plus.svg')
+                right: 45px
+                top: 11px
+                position: absolute
+
+    .todo-list
+        list-style: none 
+        width: 80%
+        height: max-content
+        margin: 30px auto
+        .img-wrapper
+            text-align: center
+        &-element
+            display: flex
+            justify-content: space-between
+            font-size: 20px
+            font-family: Arial, Helvetica, sans-serif
+            line-height: 40px
+            &-title
+                font-size: 19px
+            &-trash
+                cursor: pointer
+                i::before
+                    content: url('../images/delete.svg')
+
+.reset-items
+    form
+        position: absolute
+        bottom: 20px
+        left: 0
+        right: 0
+        i::before   
+            content: url('../images/refresh.svg')  
+            // position: absolute
+            // background: red 
+
+
+
