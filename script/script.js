@@ -54,14 +54,14 @@ function ulFill() {
     }
 };
 
-function addCond(){
-    let link = document.createElement('a');
+// function addCond(){
+//     let link = document.createElement('a');
 
-    let li = document.querySelector('li');
-    if(makeLi(input.value) < 0){
-        form.disabled()
-    }
-}
+//     let li = document.querySelector('li');
+//     if(makeLi(input.value) < 0){
+//         form.disabled()
+//     }
+// }
 
 form.addEventListener('submit', function (e) {
 
