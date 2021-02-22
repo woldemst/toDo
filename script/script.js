@@ -54,6 +54,14 @@ function ulFill() {
     }
 };
 
+function addCond(){
+    let link = document.createElement('a');
+
+    let li = document.querySelector('li');
+    if(makeLi(input.value) < 0){
+        form.disabled()
+    }
+}
 
 form.addEventListener('submit', function (e) {
 
@@ -117,3 +125,4 @@ function removeFromStorage(liItem) {
     // console.log(itemsArray)
     localStorage.setItem('items', JSON.stringify(itemsArray));
 };
+
