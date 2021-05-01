@@ -4,6 +4,8 @@ const ul = document.querySelector('.todo-list');
 const input = document.querySelector('input');
 const button = document.querySelector('.btn-reset');
 // const li = document.querySelector('li');
+const addBtn = document.querySelector('.add-items-btn')
+const listWrap = document.querySelector('.list-wrapper')
 
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 localStorage.setItem('items', JSON.stringify(itemsArray));
@@ -14,34 +16,28 @@ const data = JSON.parse(localStorage.getItem('items'));
 // console.log(data)
 
 
-
 const makeLi = text => {
-    //create li element 
+
     const li = document.createElement('li');
-
-    //add class
     li.className = 'todo-list-element';
+    // li.textContent = text;
 
-    //append text
-    li.textContent = text;
+    const span = document.createElement('span');
+    span.className = 'todo-list-element-title';
+    span.textContent = text;
 
-    //create an a href element
+
     const link = document.createElement('a');
-
-    //add class
     link.className = 'todo-list-element-trash';
-
-    //inner HTML
     link.innerHTML = '<i class="fa fa-trash" ></i>';
 
-    //append to li
+    li.appendChild(span);
     li.appendChild(link);
-
-    //append to ul
     ul.appendChild(li);
+    
+    ulFill();
 
-    // console.log(li)
-    ulFill()
+    
 
 };
 
@@ -54,23 +50,22 @@ function ulFill() {
     }
 };
 
-// function addCond(){
-//     let link = document.createElement('a');
-
-//     let li = document.querySelector('li');
-//     if(makeLi(input.value) < 0){
-//         form.disabled()
-//     }
-// }
 
 form.addEventListener('submit', function (e) {
 
     e.preventDefault();
-    itemsArray.push(input.value);
-    localStorage.setItem('items', JSON.stringify(itemsArray));
-    makeLi(input.value);
-    input.value = '';
-    window.location.reload()
+    
+    if(input.value !== ''){
+        itemsArray.push(input.value);
+        localStorage.setItem('items', JSON.stringify(itemsArray));
+        addBtn.disabled = false
+        makeLi(input.value);
+        input.value = '';
+        window.location.reload()
+    }else{
+        addBtn.disabled = false
+
+    }
 });
 
 
@@ -88,6 +83,12 @@ button.addEventListener('click', function () {
 
         localStorage.clear();
         itemsArray = [];
+        // if(itemsArray == [] ){
+        //     button.disabled = true
+        // }else{
+        //     button.disabled = false
+
+        // }
         while (ul.firstChild) {
             ul.removeChild(ul.firstChild);
         }
@@ -103,6 +104,7 @@ function removeItem(e) {
     if (e.target.parentElement.classList.contains('todo-list-element-trash')) {
         if (confirm('Are you sure ? ')) {
             e.target.parentElement.parentElement.remove();
+            window.location.reload()
 
         }
         removeFromStorage(e.target.parentElement.parentElement);

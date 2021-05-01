@@ -2,63 +2,70 @@
 @media screen and (max-width: 767px)
 
     .card
-        width: 560px
+        width: 97%
         margin: 0 auto
-        h1
-            font-size: 24px
+        
+        // h1
+        //     font-size: 24px
         &-body
             .list-wrapper
                 img
                     width: 150px
 
-        form
-            input
-                height: 50px
-                font-size: 16px
-                padding-right: 40px
+        // .add-form
+        //     .add-items-input
+        //         height: 56px
+        //         font-size: 16px
+        //         padding-right: 40px
 
-            button
-                right: 50px
-                top: 25px
-                i::before
-                    // content: url('../images/plus_m.svg')
-                    right: -17px
-                    top: -21px
+            .add-items-btn
+                left: 38%
+                bottom: 42px
+
+                &::before
+                    content: url('../images/plus.svg')
+
+                    // left: 40%
+                    // top: -15px
+                    height: 40px
+                    width: 40px
+                &:hover
+                    transform: rotate(180deg)
+                    transition: all .3s
+
         .todo-list
             .img-wrapper
                 padding-top: 40px
         .todo-list-element
             font-size: 16px
             &-trash
-                // i:before
-                //     content: url('../images/delete_m.svg')
+                i:before
+                    content: url('../images/delete_m.svg')
 
 @media screen and (max-width: 575px)
     .card
-        width: 450px
+        width: 97%
         min-height: 420px
         margin: 0 auto
-        h1
-            font-size: 20px
         &-body
-            .list-wrapper
-                img
-                    width: 150px
+            .add-items
+                .add-items-input
+                    height: 46px
 
-        form
-            input
-                height: 40px
-                font-size: 14px
-                padding-right: 45px
-
-            button
-                right: 40px
-                top: 20px
-
-                i::before
-                    content: url('../images/plus_m.svg')
-                    right: -17px
-                    top: -16px
+                .add-items-btn
+                    bottom: 36px
+                    left: 39%
+                    &::before
+                        content: url('../images/plus_m.svg')
+                        right: -15px
+                        top: -15px
+                        position: absolute
+                        transition: all 1s
+                        height: 30px
+                        width: 30px
+                    &:hover
+                        transform: rotate(180deg)
+                        transition: all .2s
         .todo-list
             .img-wrapper
                 padding-top: 40px
@@ -71,14 +78,10 @@
 @media screen and (max-width: 460px)
     .container
         margin: 6px 0
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 125bf406c62bff38a30ff2e21807a4dcd7a0930a
     .card
         width: 96%
-        height: 96%
+        min-height: 650px
+        height: 100%
         h1
             font-size: 20px
         &-body
@@ -86,17 +89,22 @@
                 img
                     width: 150px
 
-        form
-            input
+        .add-form
+            .add-items-input
                 height: 40px
                 font-size: 14px
-            button
-                right: 40px
-                top: 20px
-                i::before
+            .add-items-btn
+                bottom: 33px
+                left: 37%
+                
+                &::before
                     content: url('../images/plus_m.svg')
-                    right: -17px
-                    top: -16px
+                    right: -15px
+                    top: -15px
+                    height: 30px
+                &:hover
+                    transform: rotate(180deg)
+                    transition: all .3s
         .todo-list
             .img-wrapper
                 padding-top: 40px
@@ -108,12 +116,5 @@
                     content: url('../images/delete_m.svg')
 
     .reset-items
-        form
             i::before
                 content: url('../images/refresh_m.svg')
-// @media screen and (max-width: 320px)
-//     .card
-<<<<<<< HEAD
-=======
-        
->>>>>>> 125bf406c62bff38a30ff2e21807a4dcd7a0930a
